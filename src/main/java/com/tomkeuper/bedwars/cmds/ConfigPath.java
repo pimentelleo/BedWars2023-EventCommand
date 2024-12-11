@@ -1,4 +1,4 @@
-package com.andrei1058.bedwars.cmds;
+package com.tomkeuper.bedwars.cmds;
 
 public class ConfigPath {
 

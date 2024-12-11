@@ -1,8 +1,9 @@
-package com.andrei1058.bedwars.cmds.listeners;
+package com.tomkeuper.bedwars.cmds.listeners;
 
-import com.andrei1058.bedwars.api.events.player.PlayerBedBreakEvent;
-import com.andrei1058.bedwars.cmds.ConfigPath;
-import com.andrei1058.bedwars.cmds.Main;
+import com.tomkeuper.bedwars.api.events.player.PlayerBedBreakEvent;
+import com.tomkeuper.bedwars.cmds.ConfigPath;
+import com.tomkeuper.bedwars.cmds.Main;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

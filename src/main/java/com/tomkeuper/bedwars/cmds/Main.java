@@ -1,11 +1,12 @@
-package com.andrei1058.bedwars.cmds;
+package com.tomkeuper.bedwars.cmds;
 
-import com.andrei1058.bedwars.api.BedWars;
-import com.andrei1058.bedwars.api.configuration.ConfigManager;
-import com.andrei1058.bedwars.cmds.listeners.BedDestroyListener;
-import com.andrei1058.bedwars.cmds.listeners.FinalKillsListener;
-import com.andrei1058.bedwars.cmds.listeners.RegularKillsListener;
-import com.andrei1058.bedwars.cmds.listeners.WinListener;
+import com.tomkeuper.bedwars.api.BedWars;
+import com.tomkeuper.bedwars.api.configuration.ConfigManager;
+import com.tomkeuper.bedwars.cmds.listeners.BedDestroyListener;
+import com.tomkeuper.bedwars.cmds.listeners.FinalKillsListener;
+import com.tomkeuper.bedwars.cmds.listeners.RegularKillsListener;
+import com.tomkeuper.bedwars.cmds.listeners.WinListener;
+
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -26,7 +27,7 @@ public class Main extends JavaPlugin implements Listener {
         plugin = this;
 
         // Check if bw plugin is loaded
-        if (Bukkit.getPluginManager().getPlugin("BedWars1058") == null || !this.isBwClassLoaded()) {
+        if (Bukkit.getPluginManager().getPlugin("BedWars2023") == null || !this.isBwClassLoaded()) {
             getLogger().severe("Cannot find BedWars1058 on your server...");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
@@ -35,7 +36,7 @@ public class Main extends JavaPlugin implements Listener {
         api = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
 
         /* Setup configuration */
-        cfg = new ConfigManager(this, "config", "plugins/BedWars1058/Addons/Cmds");
+        cfg = new ConfigManager(this, "config", "plugins/BedWars2023/Addons/Cmds");
         setupConfiguration();
 
         /* Register listeners */
@@ -59,7 +60,7 @@ public class Main extends JavaPlugin implements Listener {
 
     private static void setupConfiguration() {
         YamlConfiguration yml = getCfg().getYml();
-        yml.options().header("This is a BedWars1058 mini-game add-on by andrei1058." +
+        yml.options().header("This is a BedWars2023 mini-game add-on by batmann4bot." +
                 "\nDocumentation here: https://gitlab.com/bedwars-addons/bedwars1058-rewardcmds/wikis/home");
 
         yml.addDefault(ConfigPath.GAME_WIN_ENABLE, true);
@@ -98,12 +99,12 @@ public class Main extends JavaPlugin implements Listener {
 
     private boolean isBwClassLoaded() {
         try {
-            Class.forName("com.andrei1058.bedwars.api.BedWars");
+            Class.forName("com.tomkeuper.bedwars.api.BedWars");
             return true;
         } catch (Exception ignored) {
         }
         try {
-            Class.forName("dev.andrei1058.bedwars.api.BedWars");
+            Class.forName("dev.tomkeuper.bedwars.api.BedWars");
             return true;
         } catch (Exception ignored) {
         }

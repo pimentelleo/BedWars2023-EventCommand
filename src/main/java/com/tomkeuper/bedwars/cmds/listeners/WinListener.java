@@ -1,16 +1,17 @@
-package com.andrei1058.bedwars.cmds.listeners;
+package com.tomkeuper.bedwars.cmds.listeners;
 
-import com.andrei1058.bedwars.api.arena.GameState;
-import com.andrei1058.bedwars.api.events.gameplay.GameStateChangeEvent;
-import com.andrei1058.bedwars.cmds.ConfigPath;
-import com.andrei1058.bedwars.cmds.Main;
+import static com.tomkeuper.bedwars.cmds.Main.getPlugin;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
 
-import static com.andrei1058.bedwars.cmds.Main.getPlugin;
+import com.tomkeuper.bedwars.api.arena.GameState;
+import com.tomkeuper.bedwars.api.events.gameplay.GameStateChangeEvent;
+import com.tomkeuper.bedwars.cmds.ConfigPath;
+import com.tomkeuper.bedwars.cmds.Main;
 
 public class WinListener implements Listener {
 
